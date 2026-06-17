@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecBlog - All Posts</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <link rel="stylesheet" href="https://lib.arvancloud.ir/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="logo">Sec<span>Blog</span></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts/" style="background-color: #4f8ef7; color: white;">Posts</a></li>
+            <li><a href="/dashboard/">dashboard</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/contact-us/">Contact</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/signup/">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <section id="posts">
+        <div class="section-header">
+            <h2>All Posts</h2>
+        </div>
+        <div class="posts-grid">
+            <div class="post-card">
+                <img src="{% static 'images/Cybersecurity.jpeg' %}" alt="AI">
+                <div class="post-body">
+                    <span class="post-tag">Cybersecurity</span>
+                    <h3>Ethical Hacking 101: How White Hat Hackers Protect Us</h3>
+                    <p>Not all hackers are criminals. Ethical hackers (white hats) use the same tools and techniques as malicious hackers, but with permission to find and fix vulnerabilities before attackers exploit them. Certifications like CEH and OSCP are among the most in-demand cybersecurity credentials in 2025.</p>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="avatar-initial">Y</div>
+                            <span>Yashar Shahinzade</span>
+                        </div>
+                        <span>Dec 10, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <img src="{% static 'images/Phishing.jpeg' %}" alt="Hardware">
+                <div class="post-body">
+                    <span class="post-tag">Phishing</span>
+                    <h3>Smart Phishing: When AI Gets Dangerous</h3>
+                    <p>Phishing has evolved. Attackers now use large language models (like GPT) to generate flawless, personalized emails at scale. Even worse? AI voice cloning for vishing (voice phishing) attacks where a deepfake "CEO" calls to authorize wire transfers. According to the Anti-Phishing Working Group, phishing attacks hit an all-time high in 2026, with over 1.5 million unique attacks detected. Your defense: always verify sender addresses ...</p>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="avatar-initial">N</div>
+                            <span>Nimux</span>
+                        </div>
+                        <span>Dec 7, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <img src="{% static 'images/Password-security.jpeg' %}" alt="Security">
+                <div class="post-body">
+                    <span class="post-tag">Password Security</span>
+                    <h3>Why Your Password Gets Hacked in Seconds + Golden Rules</h3>
+                    <p>A hacker with a standard laptop can try 10 billion password combinations per second. Your "P@ssw0rd123" will fall in minutes. Common attack methods include: Brute Force (trying every combination), Dictionary Attack (trying common words), and Rainbow Tables (pre-computed hash lookup). So what works? A strong password has 12+ characters with uppercase ...</p>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="avatar-initial">L</div>
+                            <span>Linus Torvalds</span>
+                        </div>
+                        <span>Dec 3, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <img src="{% static 'images/Malver.jpeg' %}" alt="Web3">
+                <div class="post-body">
+                    <span class="post-tag">Malware</span>
+                    <h3>Antivirus is Dead. Welcome to the Era of EDR & XDR</h3>
+                    <p>Traditional antivirus uses signature-based detection — it looks for known malware patterns. The problem? New malware appears every 4.2 seconds. Once it's in the wild, it's already too late. Enter EDR (Endpoint Detection and Response). EDR solutions use behavioral analysis, AI, and machine learning to spot suspicious activity even from never-before-seen malware. Top solutions include CrowdStrike Falcon ...</p>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="avatar-initial">M</div>
+                            <span>Mehdi moarrab</span>
+                        </div>
+                        <span>Nov 28, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <img src="{% static 'images/Network-security.jpeg' %}" alt="Cloud">
+                <div class="post-body">
+                    <span class="post-tag">Network Security</span>
+                    <h3>Public Wi-Fi is a Hacker's Playground. Here's How to Stay Safe.</h3>
+                    <p>Public Wi-Fi is convenient, but it's also where hackers run Man-in-the-Middle (MITM) attacks. With simple tools like Wireshark, BetterCAP, or an Evil Twin access point, an attacker can see all your unencrypted traffic — emails, passwords, even credit card numbers. What's scary? Most people don't even notice ...</p>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="avatar-initial">B</div>
+                            <span>Bahar omidvar</span>
+                        </div>
+                        <span>Nov 22, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <img src="{% static 'images/Ransomware.jpeg' %}" alt="Dev">
+                <div class="post-body">
+                    <span class="post-tag">Ransomware</span>
+                    <h3>Ransomware Explained: How It Works & How to Fight Back</h3>
+                    <p>Ransomware is malware that encrypts your files and demands payment (usually in Bitcoin) for the decryption key. Major attacks like WannaCry (200,000+ victims), NotPetya ($10 billion in damages), and LockBit (hundreds of organizations) have caused chaos worldwide. Attackers usually gain access through phishing emails, malicious downloads, or unpatched software vulnerabilities ...</p>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="avatar-initial">A</div>
+                            <span>Ava Ghorbani</span>
+                        </div>
+                        <span>Nov 18, 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>SecBlog</h4>
+                <p>A cybersecurity blog about ethical hacking, penetration testing, and digital defense.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/posts/">Posts</a></li>
+                    <li><a href="/dashboard/">dashboard</a></li>
+                    <li><a href="/contact-us/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Artificial Intelligence</a></li>
+                    <li><a href="#">Cybersecurity</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Hardware</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <div class="social-links">
+                    <a href="#" title="X"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="telegram"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SecBlog · All rights reserved</p>
+            <p>Built with ❤️ for cybersecurity enthusiasts</p>
+        </div>
+    </footer>
+
+</body>
+</html>

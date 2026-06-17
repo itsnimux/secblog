@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecBlog - Login</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <link rel="stylesheet" href="https://lib.arvancloud.ir/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="loginRequier" class="login-requier">
+        <h2>Access Restricted</h2>
+        <p>You need to logout to access another accounts.</p>
+        <div class="btn-group">
+            <button id="logoutBtn" class="btn-logout-card">Logout</button>
+        </div>
+    </div>
+
+
+    <!-- ===== NAVBAR ===== -->
+    <nav>
+        <a href="/" class="logo">Sec<span>Blog</span></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts/">Posts</a></li>
+            <li><a href="/dashboard/">dashboard</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/contact-us/">Contact</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/login/" style="background-color: #4f8ef7; color: white;">Login</a></li>
+            <li><a href="/signup/">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div id="blurOverlay" class="blur-overlay"></div>
+
+
+    <!-- ===== LOGIN SECTION ===== -->
+    <section id="login">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="login-logo"><i class="fas fa-sign-in" style="color: #fffb13;"></i></div>
+                    <h2>Welcome Back</h2>
+                    <p>Log in to access exclusive cybersecurity content</p>
+                </div>
+                
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label>Email or Username</label>
+                        <input type="text" id="loginIdentifier" placeholder="you@example.com or nimux123" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="loginPassword" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-login">Log In</button>
+                    
+                    <div class="login-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="btn-social google">
+                            <span><i class="fab fa-google"></i></span> Continue with Google
+                        </button>
+                        <button type="button" class="btn-social github">
+                            <span><i class="fab fa-github"></i></span> Continue with GitHub
+                        </button>
+                    </div>
+                    
+                    <div class="login-footer">
+                        <p>Don't have an account? <a href="/signup/">Sign up now</a></p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="login-info">
+                <div class="info-content">
+                    <div class="info-quote">"</div>
+                    <p class="quote-text">The only secure system is the one that is powered off. But since we can't do that, let's learn how to protect what matters.</p>
+                    <div class="quote-author">— Kevin Mitnick</div>
+                    
+                    <div class="login-features">
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Access to 500+ tutorials</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Weekly CTF challenges</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Private hacking community</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Exclusive tool downloads</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>SecBlog</h4>
+                <p>A cybersecurity blog about ethical hacking, penetration testing, and digital defense.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/posts/">Posts</a></li>
+                    <li><a href="/dashboard/">dashboard</a></li>
+                    <li><a href="/contact-us/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Ethical Hacking</a></li>
+                    <li><a href="#">Malware Analysis</a></li>
+                    <li><a href="#">Network Security</a></li>
+                    <li><a href="#">CTF Walkthroughs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <div class="social-links">
+                    <a href="#" title="X"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="telegram"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 SecBlog · All rights reserved</p>
+            <p>Built with ❤️ for cybersecurity enthusiasts</p>
+        </div>
+    </footer>
+
+    <script>
+        fetch('/accounts/api/check-auth/')
+            .then(response => response.json())
+            .then(data => {
+                if (data.authenticated) {
+                    document.getElementById('blurOverlay').style.display = 'block';
+                    document.getElementById('loginRequier').style.display = 'block';
+                }
+            });
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var formData = new FormData();
+            formData.append('identifier', document.getElementById('loginIdentifier').value);
+            formData.append('password', document.getElementById('loginPassword').value);
+            
+            fetch('/accounts/api/signin/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) window.location.href = '/dashboard/';
+            });
+        });
+
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function() {
+                fetch('/accounts/api/logout/', {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    window.location.href = '/';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

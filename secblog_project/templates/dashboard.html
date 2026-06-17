@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecBlog - Dashboard</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <link rel="stylesheet" href="https://lib.arvancloud.ir/font-awesome/6.3.0/css/all.min.css">
+
+</head>
+<body>
+
+    <div id="loginRequier" class="login-requier">
+        <h2>Access Restricted</h2>
+        <p>You need to be logged in to access the dashboard.</p>
+        <div class="btn-group">
+            <a href="/login/" class="btn-login-card">Login</a>
+            <a href="/signup/" class="btn-signup-card">Sign Up</a>
+        </div>
+    </div>
+        
+    <nav>
+        <a href="/" class="logo">Sec<span>Blog</span></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts/">Posts</a></li>
+            <li><a href="/dashboard/" style="background-color: #4f8ef7; color: white;">Dashboard</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/contact-us/">Contact</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/signup/">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div id="blurOverlay" class="blur-overlay"></div>
+
+    <section id="about">
+        <div class="about-container">
+            <img src="{% static 'images/nimux.jpg' %}" alt="Author">
+            <div class="about-text">
+                <h2>Hi, I'm Nimux</h2>
+                <span class="role">Hacker & Cyber security Writer</span>
+                <p>
+                    I'm a hacker and pentester with over 8 years of experience
+                    in the industry. I started SecBlog to share my knowledge and passion
+                    about the latest trends in cyber security, red team, pentest, and more.
+                </p>
+                <div class="about-tags">
+                    <span><i class="fas fa-shield-alt" style="color: #4f8ef7;"></i> Cybersecurity</span>
+                    <span><i class="fas fa-user-ninja" style="color: #e03131;"></i> Hacker</span>
+                    <span><i class="fas fa-fire" style="color: #f59f00;"></i> Red Team</span>
+                    <span><i class="fas fa-laptop-code" style="color: #c051cf;"></i> Pentester</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="log-out" style="text-align: center; margin-top: 40px;">
+            <button id="logoutBtn" class="btn" style="background-color: #e03131; padding: 12px 40px;">Logout</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>SecBlog</h4>
+                <p>A cybersecurity blog about ethical hacking, penetration testing, and digital defense.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/posts/">Posts</a></li>
+                    <li><a href="/dashboard/">Dashboard</a></li>
+                    <li><a href="/contact-us/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Ethical Hacking</a></li>
+                    <li><a href="#">Malware Analysis</a></li>
+                    <li><a href="#">Network Security</a></li>
+                    <li><a href="#">CTF Walkthroughs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <div class="social-links">
+                    <a href="#" title="X"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="telegram"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SecBlog · All rights reserved</p>
+            <p>Built with ❤️ for cybersecurity enthusiasts</p>
+        </div>
+    </footer>
+    
+    <script>
+        // بررسی لاگین
+        fetch('/accounts/api/check-auth/')
+            .then(response => response.json())
+            .then(data => {
+                if (!data.authenticated) {
+                    document.getElementById('blurOverlay').style.display = 'block';
+                    document.getElementById('loginRequier').style.display = 'block';
+                }
+            });
+        
+        // دکمه logout
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function() {
+                fetch('/accounts/api/logout/', {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    window.location.href = '/';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

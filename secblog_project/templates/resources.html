@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecBlog - Cybersecurity Resources</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <link rel="stylesheet" href="https://lib.arvancloud.ir/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="logo">Sec<span>Blog</span></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts/">Posts</a></li>
+            <li><a href="/dashboard/">dashboard</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/contact-us/">Contact</a></li>
+            <li><a href="/resources/" style="background-color: #4f8ef7; color: white;">Resources</a></li>
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/signup/">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <section id="resources">
+        <div class="section-header">
+            <h2><i class="fas fa-graduation-cap"></i> Cybersecurity Resources</h2>
+            <p>Compare certifications & understand cyber attacks</p>
+        </div>
+
+        <!-- ===== TABLE 1: Certifications ===== -->
+        <div class="table-container">
+            <div class="table-title">
+                <i class="fas fa-certificate" style="color: #4f8ef7;"></i>
+                <h3>Cybersecurity Certifications Comparison</h3>
+            </div>
+            <div class="table-wrapper">
+                <table class="cyber-table">
+                    <thead>
+                        <tr>
+                            <th>Certification</th>
+                            <th>Provider</th>
+                            <th>Difficulty</th>
+                            <th>Avg. Salary</th>
+                            <th>Prerequisites</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cert-name">
+                                <strong>CEH</strong>
+                                <span>Certified Ethical Hacker</span>
+                            </td>
+                            <td>EC-Council</td>
+                            <td><span class="difficulty medium">🟡 Intermediate</span></td>
+                            <td>$95,000</td>
+                            <td>2 years experience</td>
+                            <td>Ethical Hacking</td>
+                        </tr>
+                        <tr>
+                            <td class="cert-name">
+                                <strong>OSCP</strong>
+                                <span>Offensive Security Certified Professional</span>
+                            </td>
+                            <td>Offensive Security</td>
+                            <td><span class="difficulty hard">🔴 Advanced</span></td>
+                            <td>$125,000</td>
+                            <td>Linux + Networking</td>
+                            <td>Penetration Testing</td>
+                        </tr>
+                        <tr>
+                            <td class="cert-name">
+                                <strong>Security+</strong>
+                                <span>CompTIA Security+</span>
+                            </td>
+                            <td>CompTIA</td>
+                            <td><span class="difficulty easy">🟢 Beginner</span></td>
+                            <td>$75,000</td>
+                            <td>None</td>
+                            <td>Entry Level</td>
+                        </tr>
+                        <tr>
+                            <td class="cert-name">
+                                <strong>CISSP</strong>
+                                <span>Certified Information Systems Security Professional</span>
+                            </td>
+                            <td>ISC²</td>
+                            <td><span class="difficulty hard">🔴 Expert</span></td>
+                            <td>$150,000</td>
+                            <td>5 years experience</td>
+                            <td>Security Management</td>
+                        </tr>
+                        <tr>
+                            <td class="cert-name">
+                                <strong>GSEC</strong>
+                                <span>GIAC Security Essentials</span>
+                            </td>
+                            <td>SANS Institute</td>
+                            <td><span class="difficulty medium">🟡 Intermediate</span></td>
+                            <td>$85,000</td>
+                            <td>Basic security knowledge</td>
+                            <td>Hands-on Security</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ===== TABLE 2: Cyber Attacks ===== -->
+        <div class="table-container">
+            <div class="table-title">
+                <i class="fas fa-skull" style="color: #e03131;"></i>
+                <h3>Common Cyber Attacks Comparison</h3>
+            </div>
+            <div class="table-wrapper">
+                <table class="cyber-table">
+                    <thead>
+                        <tr>
+                            <th>Attack Type</th>
+                            <th>Target</th>
+                            <th>Risk Level</th>
+                            <th>Impact</th>
+                            <th>Prevention Methods</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="attack-name">
+                                <i class="fas fa-envelope"></i>
+                                <strong>Phishing</strong>
+                            </td>
+                            <td>User credentials</td>
+                            <td><span class="risk high">🔴 High</span></td>
+                            <td>Data theft, Account takeover</td>
+                            <td>User training + 2FA + Email filtering</td>
+                        </tr>
+                        <tr>
+                            <td class="attack-name">
+                                <i class="fas fa-lock"></i>
+                                <strong>Ransomware</strong>
+                            </td>
+                            <td>Files & systems</td>
+                            <td><span class="risk critical">💀 Critical</span></td>
+                            <td>Data loss, Financial damage</td>
+                            <td>Regular backups + Anti-malware</td>
+                        </tr>
+                        <tr>
+                            <td class="attack-name">
+                                <i class="fas fa-network-wired"></i>
+                                <strong>DDoS</strong>
+                            </td>
+                            <td>Servers & networks</td>
+                            <td><span class="risk medium">🟡 Medium</span></td>
+                            <td>Service disruption, Downtime</td>
+                            <td>CDN + Rate limiting + Firewalls</td>
+                        </tr>
+                        <tr>
+                            <td class="attack-name">
+                                <i class="fas fa-user-secret"></i>
+                                <strong>MITM</strong>
+                                <span style="font-size: 11px;">Man-in-the-Middle</span>
+                            </td>
+                            <td>Network traffic</td>
+                            <td><span class="risk high">🔴 High</span></td>
+                            <td>Data interception, Session hijacking</td>
+                            <td>VPN + HTTPS + Encrypted connections</td>
+                        </tr>
+                        <tr>
+                            <td class="attack-name">
+                                <i class="fas fa-database"></i>
+                                <strong>SQL Injection</strong>
+                            </td>
+                            <td>Databases</td>
+                            <td><span class="risk high">🔴 High</span></td>
+                            <td>Data breach, Data loss</td>
+                            <td>Parameterized queries + Input validation</td>
+                        </tr>
+                        <tr>
+                            <td class="attack-name">
+                                <i class="fas fa-wifi"></i>
+                                <strong>Evil Twin</strong>
+                            </td>
+                            <td>Wi-Fi users</td>
+                            <td><span class="risk medium">🟡 Medium</span></td>
+                            <td>Credential theft</td>
+                            <td>Avoid public Wi-Fi + Use VPN</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>SecBlog</h4>
+                <p>A cybersecurity blog about ethical hacking, penetration testing, and digital defense.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/posts/">Posts</a></li>
+                    <li><a href="/dashboard/">dashboard</a></li>
+                    <li><a href="/contact-us/">Contact</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Ethical Hacking</a></li>
+                    <li><a href="#">Malware Analysis</a></li>
+                    <li><a href="#">Network Security</a></li>
+                    <li><a href="#">CTF Walkthroughs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <div class="social-links">
+                    <a href="#" title="X"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="telegram"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SecBlog · All rights reserved</p>
+            <p>Built with ❤️ for cybersecurity enthusiasts</p>
+        </div>
+    </footer>
+
+</body>
+</html>

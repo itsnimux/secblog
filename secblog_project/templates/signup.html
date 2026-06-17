@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecBlog - Sign Up</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <link rel="stylesheet" href="https://lib.arvancloud.ir/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="loginRequier" class="login-requier">
+        <h2>Access Restricted</h2>
+        <p>You need to logout to access another accounts.</p>
+        <div class="btn-group">
+            <button id="logoutBtn" class="btn-logout-card">Logout</button>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav>
+        <a href="/" class="logo">Sec<span>Blog</span></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts/">Posts</a></li>
+            <li><a href="/dashboard/">dashboard</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/contact-us/">Contact</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/signup/" style="background-color: #4f8ef7; color: white;">sign up</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="main-content">
+        <div id="blurOverlay" class="blur-overlay"></div>
+
+
+    <!-- ===== SIGNUP SECTION ===== -->
+    <section id="signup">
+        <div class="signup-container">
+            <div class="signup-card">
+                <div class="signup-header">
+                    <h2>Create an Account</h2>
+                    <p>Join the SecBlog community and stay updated with the latest in cybersecurity</p>
+                </div>
+                
+                <form class="signup-form" id="signupForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" id="firstName" placeholder="Nima" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" id="lastName" placeholder="Ghobadi" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="username" placeholder="nimux123" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                            <span class="password-hint">Must be at least 8 characters</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="termsCheckbox" required>
+                            <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-signup">Sign Up</button>
+                    
+                    <div class="signup-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <div class="social-signup">
+                        <button type="button" class="btn-social google">
+                            <span><i class="fab fa-google"></i></span> Sign up with Google
+                        </button>
+                        <button type="button" class="btn-social github">
+                            <span><i class="fab fa-github"></i></span> Sign up with GitHub
+                        </button>
+                    </div>
+                    
+                    <div class="signup-footer">
+                        <p>Already have an account? <a href="/login/">Log in</a></p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="signup-info">
+                <div class="info-content">
+                    <div class="info-icon"><i class="fa fa-key" style="color: #fffb13;"></i></div>
+                    <h3>Why Join SecBlog?</h3>
+                    <ul>
+                        <li>✓ Exclusive cybersecurity tutorials</li>
+                        <li>✓ Weekly penetration testing tips</li>
+                        <li>✓ Access to private Discord community</li>
+                        <li>✓ Early access to security tools</li>
+                        <li>✓ Monthly CTF challenges</li>
+                    </ul>
+                    <div class="info-stats">
+                        <div class="stat">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Active Members</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Tutorials</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>SecBlog</h4>
+                <p>A cybersecurity blog about ethical hacking, penetration testing, and digital defense.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/posts/">Posts</a></li>
+                    <li><a href="/dashboard/">dashboard</a></li>
+                    <li><a href="/contact-us/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Ethical Hacking</a></li>
+                    <li><a href="#">Malware Analysis</a></li>
+                    <li><a href="#">Network Security</a></li>
+                    <li><a href="#">CTF Walkthroughs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <div class="social-links">
+                    <a href="#" title="X"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="telegram"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SecBlog · All rights reserved</p>
+            <p>Built with ❤️ for cybersecurity enthusiasts</p>
+        </div>
+    </footer>
+
+    <script>
+        fetch('/accounts/api/check-auth/')
+            .then(response => response.json())
+            .then(data => {
+                if (data.authenticated) {
+                    document.getElementById('blurOverlay').style.display = 'block';
+                    document.getElementById('loginRequier').style.display = 'block';
+                }
+            });
+
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (document.getElementById('password').value !== document.getElementById('confirmPassword').value) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            var formData = new FormData();
+            formData.append('name', document.getElementById('firstName').value);
+            formData.append('last_name', document.getElementById('lastName').value);
+            formData.append('email', document.getElementById('email').value);
+            formData.append('username', document.getElementById('username').value);
+            formData.append('password', document.getElementById('password').value);
+            
+            fetch('/accounts/api/signup/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) window.location.href = '/login/';
+            });
+        });
+
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function() {
+                fetch('/accounts/api/logout/', {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    window.location.href = '/';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
