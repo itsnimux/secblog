@@ -187,11 +187,9 @@ section {
 .post-card img {
     width: 100%;
     height: 185px;
-    object-fit: cover;
     display: block;
     filter: brightness(0.85);
     transition: filter 0.3s;
-    flex-shrink: 0;
 }
 
 .post-card:hover img {
@@ -312,7 +310,6 @@ section {
 .about-tags {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
 }
 
 .about-tags span {
@@ -338,7 +335,7 @@ section {
     font-size: 15px;
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
+    display: inline;
     font-family: 'Segoe UI', sans-serif;
     transition: all 0.3s;
 }
@@ -372,7 +369,6 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     filter: brightness(0.6) grayscale(20%);
     transition: all 0.4s;
 }
@@ -414,7 +410,7 @@ section {
     gap: 50px;
     max-width: 950px;
     margin: 0 auto;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .contact-info {
